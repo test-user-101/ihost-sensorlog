@@ -1,0 +1,28 @@
+ONE EXTRA STEP BEFORE THIS BUILDS
+=================================
+
+Everything in this folder is ready to upload to GitHub, EXCEPT one file that
+could not be written to your Documents folder automatically, because Windows
+protects folders whose name starts with a dot.
+
+The missing file is the build recipe. Without it, GitHub will not build the
+ARMv7 image your iHost needs.
+
+It is included here instead as:   GITHUB-WORKFLOW-build.yml
+
+Easiest fix - do this in the browser, after you upload everything else:
+
+  1. Open your repository on github.com
+  2. Click  Add file  ->  Create new file
+  3. In the filename box type exactly:
+
+         .github/workflows/build.yml
+
+     (Typing the slashes makes GitHub create the folders for you.)
+  4. Open GITHUB-WORKFLOW-build.yml from this folder, copy all of it,
+     and paste it into the big editor box.
+  5. Click  Commit changes
+  6. Go to the  Actions  tab and watch it build. 5-10 minutes.
+
+You can delete GITHUB-WORKFLOW-build.yml and this file from the repository
+afterwards - they are only here to carry that content across.

@@ -1,0 +1,13 @@
+# For running on a NAS / Pi / laptop. The iHost itself uses its own Docker UI.
+services:
+  sensorlog:
+    image: ${IMAGE:-ihost-sensorlog:local}
+    build: .
+    container_name: ihost-sensorlog
+    restart: unless-stopped
+    network_mode: host
+    env_file: .env
+    volumes:
+      - ihost-data:/data
+volumes:
+  ihost-data:
